@@ -13,7 +13,9 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-
+if (App::environment('production')) {
+    URL::forceScheme('https');
+}
 //Application home::
 
 Route::get('/', [PagesController::class, 'index']);
